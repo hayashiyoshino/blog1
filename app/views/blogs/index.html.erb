@@ -1,1 +1,6 @@
+<% @blogs.each do |blog| %>
 
+<h3>タイトル</h3>
+<%= link_to blog.title,"/blogs/#{blog.id}" %>
+
+<% end %>
