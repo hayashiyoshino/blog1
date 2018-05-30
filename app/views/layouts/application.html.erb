@@ -20,13 +20,17 @@
 <body>
 
   <nav>
-    <div class="nav-wrapper pink">
+    <div class="nav-wrapper purple accent-1">
       <!-- <a href="#" class="brand-logo">Blog</a> -->
       <%= link_to "Blog", root_path, class: "brand-logo" %>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+        <% if user_signed_in? %>
+        <li><a href="/new">新規投稿</a></li>
+        <li><%= link_to 'ログアウト', "/users/sign_out", method: :delete %></li>
+        <% else %>
+        <li><a href="/users/sign_in">ログイン</a></li>
+        <li><a href="/users/sign_up">会員登録</a></li>
+        <% end %>
       </ul>
     </div>
   </nav>

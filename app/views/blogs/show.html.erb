@@ -1,3 +1,7 @@
 
+<p><%= @blog.title %></p>
 <p><%= @blog.text %></p>
+<li><%= link_to '編集', "/blogs/blog.id/edit", method: :delete %></li>
+
+<li><%= link_to '削除', "/blogs/blog.id", method: :delete %></li>
 
