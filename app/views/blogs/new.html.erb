@@ -1,0 +1,9 @@
+<%= form_for @blog do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title, placeholder: 'タイトル' %>
+<br />
+<%= f.text_area :text, placeholder: '本文' %>
+<br />
+<%= submit_tag :submit %>
+<% end %>
+

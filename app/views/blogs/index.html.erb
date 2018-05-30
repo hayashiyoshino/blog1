@@ -1,9 +1,19 @@
-<% @blogs.each do |blog| %>
+<div class="container">
 
-<h5>タイトル</h5>
+<h4>記事一覧</h4>
+
+<% @blogs.each do |blog| %>
+<br />
+<i class="material-icons">child_care</i>
 <div class="waves-effect waves-light btn pink lighten-5">
+<h7>タイトル</h7>
 <%= link_to blog.title,"/blogs/#{blog.id}" %>
 </div>
-
+<br />
+<div class="card-panel">
+    <span class="blue-text text-darken-2"><%= blog.text %></span>
+  </div>
 
 <% end %>
+
+</div>

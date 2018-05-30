@@ -11,6 +11,7 @@ class BlogsController < ApplicationController
   end
 
   def new
+    @blog = Blog.new
   end
 
   def create
@@ -29,7 +30,7 @@ class BlogsController < ApplicationController
 
   private
   def move_to_index
-    redirect_to action: :index unless user_ingned_in?
+    redirect_to action: :index unless user_signed_in?
   end
 
   def create_params

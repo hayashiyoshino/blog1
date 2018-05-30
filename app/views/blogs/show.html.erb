@@ -1,7 +1,18 @@
 
+
+<div class="container">
+    <div class="card-panel teal lighten-2">
+      <p class="flow-text">
+<blockquote>
+<p>タイトル</p>
 <p><%= @blog.title %></p>
+<p>記事</p>
 <p><%= @blog.text %></p>
+
 <li><%= link_to '編集', "/blogs/blog.id/edit", method: :delete %></li>
 
 <li><%= link_to '削除', "/blogs/blog.id", method: :delete %></li>
-
+</blockquote>
+</p>
+</div>
+</div>

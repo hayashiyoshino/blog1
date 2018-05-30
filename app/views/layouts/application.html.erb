@@ -16,6 +16,8 @@
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
@@ -25,7 +27,7 @@
       <%= link_to "Blog", root_path, class: "brand-logo" %>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if user_signed_in? %>
-        <li><a href="/new">新規投稿</a></li>
+        <li><a href="/blogs/new">新規投稿</a></li>
         <li><%= link_to 'ログアウト', "/users/sign_out", method: :delete %></li>
         <% else %>
         <li><a href="/users/sign_in">ログイン</a></li>
