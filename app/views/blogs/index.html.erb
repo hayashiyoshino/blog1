@@ -1,6 +1,9 @@
 <% @blogs.each do |blog| %>
 
 <h3>タイトル</h3>
+<div class="waves-effect waves-light btn">
 <%= link_to blog.title,"/blogs/#{blog.id}" %>
+</div>
+
 
 <% end %>
