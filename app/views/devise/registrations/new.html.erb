@@ -1,11 +1,16 @@
-<h2>Sign up</h2>
+<h2>会員登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :nickname %><em>(8 characters maximum)</em><br />
+    <%= f.text_field :nickname, placeholder: 'ニックネーム(８文字以内)', autofocus: true, maxlength: "8" %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, placeholder: 'メールアドレス', autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
@@ -13,16 +18,16 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, placeholder: 'パスワード', autocomplete: "off" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, placeholder: 'パスワード(確認)', autocomplete: "off" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "登録" %>
   </div>
 <% end %>
 
