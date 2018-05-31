@@ -1,13 +1,9 @@
 <div class="container">
 
-<h4>記事一覧</h4>
-
+<h5>
+<p><i class="material-icons">child_care</i>
+<%= @nickname %>さんの投稿一覧</p></h5>
 <% @blogs.each do |blog| %>
-<br />
-<i class="material-icons">child_care</i>
-<h8>投稿者</h8>
-<span><%= blog.user.nickname %></span><p>さんの投稿一覧</p>
-<br />
 <div class="container">
     <div class="card-panel blue lighten-5">
       <p class="flow-text">
