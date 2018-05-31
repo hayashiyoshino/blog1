@@ -1,7 +1,7 @@
 
 
 <div class="container">
-    <div class="card-panel teal lighten-2">
+    <div class="card-panel blue lighten-5">
       <p class="flow-text">
 <blockquote>
 <p>タイトル</p>
@@ -9,9 +9,11 @@
 <p>記事</p>
 <p><%= @blog.text %></p>
 
-<li><%= link_to '編集', "/blogs/blog.id/edit", method: :delete %></li>
+<% if user_signed_in? && current_user.id == @blog.user_id %>
+<li><%= link_to '編集', "/blogs/#{@blog.id}/edit", method: :get %></li>
 
-<li><%= link_to '削除', "/blogs/blog.id", method: :delete %></li>
+<li><%= link_to '削除', "/blogs/#{@blog.id}", method: :delete %></li>
+<% end %>
 </blockquote>
 </p>
 </div>
