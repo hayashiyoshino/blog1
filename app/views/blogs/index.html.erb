@@ -6,7 +6,7 @@
 <br />
 <i class="material-icons">child_care</i>
 <h8>投稿者</h8>
-<span><%= blog.user.nickname %></span>
+<span><%= link_to blog.user.nickname,"/users/#{blog.user.id}" %></span>
 <br />
 <h7>&emsp;&emsp;タイトル</h7>
 <div class="waves-effect waves-light btn pink lighten-5">

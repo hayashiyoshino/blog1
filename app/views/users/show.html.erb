@@ -1,0 +1,31 @@
+<div class="container">
+
+<h4>記事一覧</h4>
+
+<% @blogs.each do |blog| %>
+<br />
+<i class="material-icons">child_care</i>
+<h8>投稿者</h8>
+<span><%= blog.user.nickname %></span><p>さんの投稿一覧</p>
+<br />
+<div class="container">
+    <div class="card-panel blue lighten-5">
+      <p class="flow-text">
+<blockquote>
+<p>タイトル</p>
+<p><%= blog.title %></p>
+<p>記事</p>
+<p><%= blog.text %></p>
+
+<% if user_signed_in? && current_user.id == blog.user_id %>
+<li><%= link_to '編集', "/blogs/#{blog.id}/edit", method: :get %></li>
+
+<li><%= link_to '削除', "/blogs/#{blog.id}", method: :delete %></li>
+<% end %>
+</blockquote>
+</p>
+</div>
+</div>
+<% end %>
+
+</div>
