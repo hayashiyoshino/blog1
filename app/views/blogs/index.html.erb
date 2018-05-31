@@ -5,8 +5,11 @@
 <% @blogs.each do |blog| %>
 <br />
 <i class="material-icons">child_care</i>
+<h8>投稿者</h8>
+<span><%= blog.user.nickname %></span>
+<br />
+<h7>&emsp;&emsp;タイトル</h7>
 <div class="waves-effect waves-light btn pink lighten-5">
-<h7>タイトル</h7>
 <%= link_to blog.title,"/blogs/#{blog.id}" %>
 </div>
 <br />
